@@ -19,3 +19,6 @@ zoom = Vector2(0.25, 0.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059278668]
 shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=849984249]
+current = true
