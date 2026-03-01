@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://deg8olpta5nhk" path="res://Assets/player.tscn" id="2_y5l7i"]
 [ext_resource type="AudioStream" uid="uid://nu7hk1j8hgd8" path="res://Assets/Music/OST/UnderRun_Track.wav" id="3_y5l7i"]
+[ext_resource type="Script" uid="uid://bkrnol0uruhay" path="res://Scripts/entrance.gd" id="4_eevv0"]
+[ext_resource type="PackedScene" uid="uid://dogk4im7mt5l0" path="res://Scenes/level1.tscn" id="5_krjp8"]
 [ext_resource type="Texture2D" uid="uid://ol6wpy1kfmnh" path="res://Assets/Art/Tilesets/texture.png" id="texture"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
@@ -27,6 +29,9 @@ tile_layout = 5
 tile_size = Vector2i(320, 160)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krjp8"]
+size = Vector2(153, 71)
 
 [node name="enter" type="Node2D" unique_id=335523290]
 
@@ -54,4 +59,15 @@ position = Vector2(394, 1771)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=861916454]
 stream = ExtResource("3_y5l7i")
 autoplay = true
-stream_paused = true
+
+[node name="Entrance" type="Area2D" parent="." unique_id=1857369320]
+script = ExtResource("4_eevv0")
+level_1 = ExtResource("5_krjp8")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance" unique_id=135888773]
+position = Vector2(377, 1359)
+rotation = -0.3653867
+shape = SubResource("RectangleShape2D_krjp8")
+
+[connection signal="body_entered" from="Entrance" to="Entrance" method="_on_body_entered"]
