@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bgqvnm5im1yw5"]
+
+[node name="Start" type="Control" unique_id=328402103]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=372908697]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38900003
+anchor_top = 0.085
+anchor_right = 0.38900003
+anchor_bottom = 0.085
+offset_left = -0.12802124
+offset_top = -0.08000183
+offset_right = 226.87198
+offset_bottom = 60.92
+theme_override_font_sizes/font_size = 44
+text = "Under Run"
+
+[node name="Button" type="Button" parent="." unique_id=826400619]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.583
+anchor_right = 0.317
+anchor_bottom = 0.583
+offset_left = -0.18399048
+offset_top = 0.21600342
+offset_right = 401.816
+offset_bottom = 105.216
+theme_override_font_sizes/font_size = 61
+text = "Start"
