@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://bgqvnm5im1yw5"]
 
+[ext_resource type="Script" uid="uid://b178yd15phmws" path="res://Scripts/button.gd" id="1_r48yj"]
+[ext_resource type="PackedScene" uid="uid://dlryguhknxw5i" path="res://Scenes/enter.tscn" id="2_5ogh5"]
+
 [node name="Start" type="Control" unique_id=328402103]
 layout_mode = 3
 anchors_preset = 15
@@ -35,3 +38,7 @@ offset_right = 401.816
 offset_bottom = 105.216
 theme_override_font_sizes/font_size = 61
 text = "Start"
+script = ExtResource("1_r48yj")
+new_scene = ExtResource("2_5ogh5")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
