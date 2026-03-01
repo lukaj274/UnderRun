@@ -1,23 +1,21 @@
 extends CharacterBody2D
 
+@export var move_speed: float = 200.0
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-var mouse_location
-
-
-func _physics_process(delta: float) -> void:
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	#var direction := Input.get_axis("ui_left", "ui_right")
-	if Input.is_action_pressed("move_forward"):
-		velocity.y = SPEED
-
-	move_and_slide()
+func _ready() -> void:
+	look_at(get_global_mouse_position())
 
 func _process(delta: float) -> void:
-	mouse_location = get_global_mouse_position()
-	var angle = (mouse_location - global_position).angle()
+	# Rotate to face the mouse
+	look_at(get_global_mouse_position())
 
-	rotation_degrees = angle
+func _physics_process(delta: float) -> void:
+	var input_dir := Vector2.ZERO
+
+	# Use an input action instead of KEY_W
+	if Input.is_action_pressed("move_forward"):
+		# Local "forward" is along +X if your sprite faces right
+		input_dir = Vector2.UP.rotated(rotation)
+
+	velocity = input_dir * move_speed
+	move_and_slide()
