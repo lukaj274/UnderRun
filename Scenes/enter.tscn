@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://dlryguhknxw5i"]
 
+[ext_resource type="PackedScene" uid="uid://deg8olpta5nhk" path="res://Scenes/player.tscn" id="2_y5l7i"]
+[ext_resource type="PackedScene" uid="uid://chg1gwgahhtrn" path="res://Scenes/main_camera.tscn" id="3_eevv0"]
 [ext_resource type="Texture2D" uid="uid://ol6wpy1kfmnh" path="res://Assets/Art/Tilesets/texture.png" id="texture"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
@@ -47,6 +49,8 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAHAAQAAAAAAAIAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAHAAUAAAAAAAIAAAAIAAUAAAAAAAIAAAADAAYAAAABAAAAAAAHAAYAAAAAAAIAAAAJAAYAAAAAAAIAAAAEAAcAAAABAAIAAAAFAAcAAAABAAIAAAAGAAcAAAABAAIAAAAIAAcAAAAAAAIAAAAEAAgAAAABAAIAAAAFAAgAAAABAAIAAAAGAAgAAAABAAIAAAAHAAgAAAABAAIAAAAJAAgAAAAAAAIAAAAFAAkAAAABAAIAAAAGAAkAAAABAAIAAAAHAAkAAAABAAIAAAAIAAkAAAABAAIAAAA=")
 tile_set = SubResource("TileSet_0")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=667634595]
-position = Vector2(857, 1689)
-zoom = Vector2(0.25, 0.25)
+[node name="Player" parent="." unique_id=195401224 instance=ExtResource("2_y5l7i")]
+position = Vector2(1234, 1697)
+
+[node name="Main Camera" parent="." unique_id=200838486 node_paths=PackedStringArray("player") instance=ExtResource("3_eevv0")]
+player = NodePath("../Player")

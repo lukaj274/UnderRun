@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var move_speed: float = 200.0
 
 func _ready() -> void:
-	look_at(get_global_mouse_position())
+	look_at(get_local_mouse_position())
 
 func _process(delta: float) -> void:
 	# Rotate to face the mouse
