@@ -12,13 +12,17 @@ texture_region_size = Vector2i(320, 320)
 1:1/0 = 0
 2:1/0 = 0
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -80, -160, 0, 0, 80, 160, 0)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -80, -160, 0, 0, 80, 160, 0)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -80, -160, 0, 0, 80, 160, 0)
 
 [sub_resource type="TileSet" id="TileSet_0"]
 tile_shape = 1
 tile_layout = 5
 tile_size = Vector2i(320, 160)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0")
 
 [node name="enter" type="Node2D" unique_id=1110299682]
