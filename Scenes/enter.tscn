@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://deg8olpta5nhk" path="res://Assets/player.tscn" id="2_l7i7q"]
 [ext_resource type="Script" uid="uid://bkrnol0uruhay" path="res://Scripts/entrance.gd" id="3_y5l7i"]
-[ext_resource type="PackedScene" uid="uid://d04q1iuoj2wi3" path="res://Scenes/level1.tscn" id="4_eevv0"]
-[ext_resource type="AudioStream" uid="uid://nu7hk1j8hgd8" path="res://Assets/Music/OST/UnderRun_Track.wav" id="5_uui80"]
+[ext_resource type="PackedScene" uid="uid://du45wky7lxpq8" path="res://Scenes/main.tscn" id="4_eevv0"]
+[ext_resource type="AudioStream" uid="uid://r57pr7aooewg" path="res://Assets/Music/OST/UnderRun_Track.ogg" id="5_uui80"]
 [ext_resource type="Script" uid="uid://fmp8oo7sxq0g" path="res://Scripts/play_music.gd" id="6_uq2kw"]
 [ext_resource type="Texture2D" uid="uid://ol6wpy1kfmnh" path="res://Assets/Art/Tilesets/texture.png" id="texture"]
 
