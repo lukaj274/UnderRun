@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: CharacterBody2D) -> void:
-	var collide = body.move_and_collide()
-	print("Changing Scene...")
-	get_tree().change_scene_to_packed(level_1)
+	var distance = position - body.position
+	var collide = body.move_and_collide(distance)
+	if collide:
+		print("Changing Scene...")
+		get_tree().change_scene_to_packed(level_1)
