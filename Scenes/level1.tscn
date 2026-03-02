@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://deg8olpta5nhk" path="res://Assets/player.tscn" id="3_c5erv"]
 [ext_resource type="AudioStream" uid="uid://nu7hk1j8hgd8" path="res://Assets/Music/OST/UnderRun_Track.wav" id="3_lyd6k"]
 [ext_resource type="Script" uid="uid://fmp8oo7sxq0g" path="res://Scripts/play_music.gd" id="4_lyd6k"]
+[ext_resource type="Script" uid="uid://bkrnol0uruhay" path="res://Scripts/entrance.gd" id="5_y4dr7"]
+[ext_resource type="PackedScene" uid="uid://drushtq3x86ad" path="res://Scenes/level2.tscn" id="6_didp7"]
 [ext_resource type="Texture2D" uid="uid://ol6wpy1kfmnh" path="res://Assets/Art/Tilesets/texture.png" id="texture"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
@@ -30,6 +32,9 @@ tile_size = Vector2i(320, 160)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_didp7"]
+size = Vector2(1245, 595)
+
 [node name="level1" type="Node2D" unique_id=1631268957]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=268898661]
@@ -53,3 +58,14 @@ stream = ExtResource("3_lyd6k")
 volume_db = 2.0
 autoplay = true
 script = ExtResource("4_lyd6k")
+
+[node name="Entrance" type="Area2D" parent="." unique_id=1251787942]
+position = Vector2(-2359, 6450)
+script = ExtResource("5_y4dr7")
+level_1 = ExtResource("6_didp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance" unique_id=1877766488]
+position = Vector2(358.5, 203.5)
+shape = SubResource("RectangleShape2D_didp7")
+
+[connection signal="body_entered" from="Entrance" to="Entrance" method="_on_body_entered"]

@@ -18,3 +18,6 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 	if collide:
 		print("Changing Scene...")
 		get_tree().change_scene_to_packed(level_1)
+		#if get_tree().current_scene.name == "level2":
+			#get_parent().get_node("Player").set_meta("Flashlight", true)
+			#get_parent().get_node("Player").get_node("Control").Visible = true
