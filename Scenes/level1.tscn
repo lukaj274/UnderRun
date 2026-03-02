@@ -50,5 +50,6 @@ position = Vector2(249, 10749)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=645229738]
 stream = ExtResource("3_lyd6k")
+volume_db = 2.0
 autoplay = true
 script = ExtResource("4_lyd6k")
