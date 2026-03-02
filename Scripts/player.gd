@@ -8,4 +8,16 @@ func _movement(delta: float) -> void:
 	look_at(cursor_pos)
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		var distance_vector = cursor_pos - position
-		move_and_collide(distance_vector.normalized() * get_meta("Speed"))
+		var collide = move_and_collide(distance_vector.normalized() * get_meta("Speed"))
+		if collide:
+			velocity = velocity.slide(collide.get_normal())
+		
+		move_and_slide()
+
+func _ready() -> void:
+	if !get_meta("Flashlight"):
+		pass
+	else:
+		$Character/Darkness.enabled = false
+		$Character/Flashlight.enabled = false
+		

@@ -12,12 +12,26 @@ size = Vector2(120, 120)
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 metadata/Speed = 16
+metadata/Flashlight = false
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1509905678]
+[node name="Character" type="Sprite2D" parent="." unique_id=1509905678]
+rotation = 1.5707964
 texture = ExtResource("1_v0iea")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=635039255]
+[node name="Darkness" type="PointLight2D" parent="Character" unique_id=1869158874]
+scale = Vector2(29.85625, 29.85625)
+energy = 16.0
+blend_mode = 1
+texture = ExtResource("3_x2ivp")
+
+[node name="Flashlight" type="PointLight2D" parent="Character" unique_id=1062498691]
+position = Vector2(-3.7373236e-05, -854.99994)
+scale = Vector2(5.3312497, 5.709376)
+blend_mode = 2
+texture = ExtResource("4_v6vah")
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=635039255]
 zoom = Vector2(0.25, 0.25)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059278668]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1059278668]
 shape = SubResource("RectangleShape2D_cvnsp")
